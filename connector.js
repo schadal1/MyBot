@@ -18,14 +18,14 @@ module.exports = {
 
         var bot = new builder.UniversalBot(connector);
 
-        server.use(restify.queryParser());
+//        server.use(restify.queryParser());
 
         server.post('/api/messages', connector.listen());
 
-        server.get('/oauth', (req, res, next) => {
+/*        server.get('/oauth', (req, res, next) => {
             res.send(200, 'Paste this code into the bot: ' + req.query.code);
         });
-
+*/
         bot.dialog('/', dialog);
     }
 }
